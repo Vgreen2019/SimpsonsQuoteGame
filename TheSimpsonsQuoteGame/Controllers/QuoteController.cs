@@ -16,7 +16,7 @@ namespace TheSimpsonsQuoteGame.Controllers
             _simpsonsService = simpsonsService;
         }
 
-        public async Task<IActionResult> GetQuote()
+        public async Task<IActionResult> GetQuestion()
         {
             var results = await _simpsonsService.PullRandomQuote();
             return View(results);

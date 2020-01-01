@@ -1,0 +1,18 @@
+﻿@model QuestionViewModel
+
+@{
+    ViewData["Title"] = "GetQuestion";
+}
+
+<h1>"@Model.Question"</h1>
+
+<form asp-controller="Quote" asp-action="NextQuestion">
+
+    <input type="radio" asp-for="@Model.Answer" value="@Model.PossibleAnswers[0]" />
+    <input type="radio" asp-for="@Model.Answer" value="@Model.PossibleAnswers[1]" />
+    <input type="radio" asp-for="@Model.Answer" value="@Model.PossibleAnswers[2]" />
+
+    <button type="submit">Submit</button>>
+
+</form>
+

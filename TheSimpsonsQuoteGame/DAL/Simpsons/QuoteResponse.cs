@@ -12,4 +12,12 @@ namespace TheSimpsonsQuoteGame.SimpsonsServices
         public string Image { get; set; }
         public string ChracterDirection { get; set; }
     }
+
+
+    public class QuoteObjectResponse
+    {
+        public QuoteResponse[] QuoteResponse { get; set; }
+    }
+
+
 }

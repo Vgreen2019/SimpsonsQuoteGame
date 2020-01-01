@@ -9,6 +9,8 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using TheSimpsonsQuoteGame.DAL.Simpsons;
+using TheSimpsonsQuoteGame.Services.Simpsons;
 
 namespace TheSimpsonsQuoteGame
 {
@@ -30,6 +32,9 @@ namespace TheSimpsonsQuoteGame
                 options.CheckConsentNeeded = context => true;
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
+
+            services.AddSingleton<ISimpsonsService, SimpsonsService>();
+            services.AddSingleton<ISimpsonsStore, SimpsonsStore>();
 
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);

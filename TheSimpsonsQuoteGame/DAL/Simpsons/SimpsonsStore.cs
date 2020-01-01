@@ -10,13 +10,13 @@ namespace TheSimpsonsQuoteGame.DAL.Simpsons
 {
     public class SimpsonsStore : ISimpsonsStore
     {
-        public async Task<QuoteResponse> GetRandomQuote()
+        public async Task<List<QuoteResponse>> GetRandomQuote()
         {
             using (var httpClient = new HttpClient { BaseAddress = new Uri("https://thesimpsonsquoteapi.glitch.me") })
             {
                 var apiResult = await httpClient.GetStringAsync("/quotes");
 
-                var randomQuote = JsonConvert.DeserializeObject<QuoteResponse>(apiResult);
+                var randomQuote = JsonConvert.DeserializeObject<List<QuoteResponse>>(apiResult);
                 return randomQuote;
             }
         }

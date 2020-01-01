@@ -8,6 +8,6 @@ namespace TheSimpsonsQuoteGame.DAL.Simpsons
 {
     public interface ISimpsonsStore
     {
-        Task<QuoteResponse> GetRandomQuote();
+        Task<List<QuoteResponse>> GetRandomQuote();
     }
 }
