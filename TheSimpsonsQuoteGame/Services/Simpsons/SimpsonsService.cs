@@ -11,33 +11,70 @@ namespace TheSimpsonsQuoteGame.Services.Simpsons
     public class SimpsonsService : ISimpsonsService
     {
         private readonly ISimpsonsStore _simpsonsStore;
-        public Character Characters { get; set; }
+        private readonly ICheckAnswer _checkAnswer;
+        public string Answer { get; set; }
+        public string Question { get; set; }
 
 
-        public SimpsonsService(ISimpsonsStore simpsonsStore)
+        public List<string> _characters = new List<string>
+        {
+             "Marge Simpson",
+             "Bart Simpson",
+             "Homer Simpson"
+        };
+
+        public SimpsonsService(ISimpsonsStore simpsonsStore, ICheckAnswer checkAnswer)
         {
             _simpsonsStore = simpsonsStore;
+            _checkAnswer = checkAnswer;
         }
 
         public async Task<QuestionViewModel> PullRandomQuote()
         {
             var randomQuoteResponse = await _simpsonsStore.GetRandomQuote();
 
-            var model = new QuestionViewModel
-            {
-                //Question = randomQuoteResponse.QuoteResponse[0].Quote
-                Question = randomQuoteResponse[0].Quote
+            Answer = randomQuoteResponse[0].Character;
+            Question = randomQuoteResponse[0].Quote;
 
-            };
+            //Answer = _checkAnswer.GetAnswer(randomQuoteResponse[0].Character);
+            //Question = _checkAnswer.GetQuestion(randomQuoteResponse[0].Quote);
+
 
             var random = new Random();
-            var index = random.Next(Characters.Characters.Count);
-            //model.PossibleAnswers.Add(randomQuoteResponse.QuoteResponse[0].Character);
-            model.PossibleAnswers.Add(randomQuoteResponse[0].Character);
-            model.PossibleAnswers.Add(Characters.Characters[index]);
-            model.PossibleAnswers.Add(Characters.Characters[index]);
+            var index = random.Next(_characters.Count);
+            var index2 = random.Next(_characters.Count);
 
+            var model = new QuestionViewModel
+            {
+                Question = randomQuoteResponse[0].Quote,
+                PossibleAnswers = new List<string>
+                {
+                    randomQuoteResponse[0].Character,
+                    _characters[index],
+                    _characters[index2]
+                }                
+            };            
             return model;
+        }
+
+        public CheckAnswerViewModel CheckAnswer(string answer)
+        {
+
+            var checkAnsViewModel = new CheckAnswerViewModel
+            {
+                Question = Question,
+                Answer = Answer
+            };
+
+            if(answer == Answer)
+            {
+                checkAnsViewModel.CheckAnswerMessage = "Correct!";
+            }
+            else
+            {
+                checkAnsViewModel.CheckAnswerMessage = "Whoops! Thats not right!";
+            }
+            return checkAnsViewModel;
         }
     }
 }

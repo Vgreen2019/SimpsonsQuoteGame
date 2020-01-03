@@ -50,6 +50,7 @@ C:\Users\green\source\repos\SimpsonsQuoteGame\TheSimpsonsQuoteGame\obj\Debug\net
 C:\Users\green\source\repos\SimpsonsQuoteGame\TheSimpsonsQuoteGame\obj\Debug\netcoreapp2.2\TheSimpsonsQuoteGame.RazorCoreGenerate.cache
 C:\Users\green\source\repos\SimpsonsQuoteGame\TheSimpsonsQuoteGame\obj\Debug\netcoreapp2.2\Razor\Views\Home\Index.cshtml.g.cs
 C:\Users\green\source\repos\SimpsonsQuoteGame\TheSimpsonsQuoteGame\obj\Debug\netcoreapp2.2\Razor\Views\Home\Privacy.cshtml.g.cs
+C:\Users\green\source\repos\SimpsonsQuoteGame\TheSimpsonsQuoteGame\obj\Debug\netcoreapp2.2\Razor\Views\Quote\GetQuestion.cshtml.g.cs
 C:\Users\green\source\repos\SimpsonsQuoteGame\TheSimpsonsQuoteGame\obj\Debug\netcoreapp2.2\Razor\Views\Shared\Error.cshtml.g.cs
 C:\Users\green\source\repos\SimpsonsQuoteGame\TheSimpsonsQuoteGame\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_CookieConsentPartial.cshtml.g.cs
 C:\Users\green\source\repos\SimpsonsQuoteGame\TheSimpsonsQuoteGame\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_Layout.cshtml.g.cs
@@ -62,4 +63,3 @@ C:\Users\green\source\repos\SimpsonsQuoteGame\TheSimpsonsQuoteGame\obj\Debug\net
 C:\Users\green\source\repos\SimpsonsQuoteGame\TheSimpsonsQuoteGame\obj\Debug\netcoreapp2.2\TheSimpsonsQuoteGame.dll
 C:\Users\green\source\repos\SimpsonsQuoteGame\TheSimpsonsQuoteGame\obj\Debug\netcoreapp2.2\TheSimpsonsQuoteGame.pdb
 C:\Users\green\source\repos\SimpsonsQuoteGame\TheSimpsonsQuoteGame\obj\Debug\netcoreapp2.2\TheSimpsonsQuoteGame.csproj.CopyComplete
-C:\Users\green\source\repos\SimpsonsQuoteGame\TheSimpsonsQuoteGame\obj\Debug\netcoreapp2.2\Razor\Views\Quote\GetQuestion.cshtml.g.cs

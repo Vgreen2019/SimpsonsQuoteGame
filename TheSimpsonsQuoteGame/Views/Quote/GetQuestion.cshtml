@@ -4,15 +4,21 @@
     ViewData["Title"] = "GetQuestion";
 }
 
-<h1>"@Model.Question"</h1>
+    <div>
+        <h1>"@Model.Question"</h1>
 
-<form asp-controller="Quote" asp-action="NextQuestion">
+        <form asp-controller="Quote" asp-action="CheckAnswer">
 
-    <input type="radio" asp-for="@Model.Answer" value="@Model.PossibleAnswers[0]" />
-    <input type="radio" asp-for="@Model.Answer" value="@Model.PossibleAnswers[1]" />
-    <input type="radio" asp-for="@Model.Answer" value="@Model.PossibleAnswers[2]" />
+            <label>@Model.PossibleAnswers[0]</label>
+            <input type="radio" asp-for="@Model.Answer" value="@Model.PossibleAnswers[0]" asp-route-id="@Model.PossibleAnswers[0]" />
 
-    <button type="submit">Submit</button>>
+            <label>@Model.PossibleAnswers[1]</label>
+            <input type="radio" asp-for="@Model.Answer" value="@Model.PossibleAnswers[1]" asp-route-id="@Model.PossibleAnswers[1]" />
 
-</form>
+            <label>@Model.PossibleAnswers[2]</label>
+            <input type="radio" asp-for="@Model.Answer" value="@Model.PossibleAnswers[2]" asp-route-id="@Model.PossibleAnswers[2]" />
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
 

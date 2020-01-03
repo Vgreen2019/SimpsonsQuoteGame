@@ -10,6 +10,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using TheSimpsonsQuoteGame.DAL.Simpsons;
+using TheSimpsonsQuoteGame.Services;
 using TheSimpsonsQuoteGame.Services.Simpsons;
 
 namespace TheSimpsonsQuoteGame
@@ -35,6 +36,7 @@ namespace TheSimpsonsQuoteGame
 
             services.AddSingleton<ISimpsonsService, SimpsonsService>();
             services.AddSingleton<ISimpsonsStore, SimpsonsStore>();
+            services.AddSingleton<ICheckAnswer, CheckAnswer>();
 
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);

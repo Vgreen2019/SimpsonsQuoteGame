@@ -21,5 +21,11 @@ namespace TheSimpsonsQuoteGame.Controllers
             var results = await _simpsonsService.PullRandomQuote();
             return View(results);
         }
+
+        public IActionResult CheckAnswer(string answer)
+        {
+            var results = _simpsonsService.CheckAnswer(answer);
+            return View(results);
+        }
     }
 }

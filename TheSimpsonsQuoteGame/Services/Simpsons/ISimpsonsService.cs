@@ -10,6 +10,7 @@ namespace TheSimpsonsQuoteGame.Services.Simpsons
     public interface ISimpsonsService
     {
         Task<QuestionViewModel> PullRandomQuote();
+        CheckAnswerViewModel CheckAnswer(string answer);
 
     }
 }
