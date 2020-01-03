@@ -1,0 +1,13 @@
+﻿@model TheSimpsonsQuoteGame.Services.Simpsons.CheckAnswerViewModel
+
+@{
+    ViewData["Title"] = "CheckAnswer";
+}
+
+<h1>@Model.CheckAnswerMessage!</h1>
+
+<img src="@Model.Image" alt="Character Image" />
+
+<h3>It was @Model.Answer!</h3>
+
+<a asp-controller="Quote" asp-action="GetQuestion" >Next Question</a>
